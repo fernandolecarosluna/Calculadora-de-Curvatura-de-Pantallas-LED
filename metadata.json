@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Calculadora de Curvatura de Pantallas LED",
+  "description": "Una aplicación para calcular las dimensiones resultantes de una pantalla LED modular curva. Los usuarios pueden definir múltiples tramos horizontales, especificar el número de módulos de 50x50 cm y el ángulo de curvatura para cada tramo, y la aplicación visualizará el resultado con las medidas finales.",
+  "requestFramePermissions": []
+}
