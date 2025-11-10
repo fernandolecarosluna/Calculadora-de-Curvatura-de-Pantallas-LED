@@ -36,7 +36,7 @@ const SectionInput: React.FC<SectionInputProps> = ({ section, index, onChange, o
           {canRemove && (
             <button 
               onClick={() => onRemove(section.id)}
-              className="text-gray-500 hover:text-red-400 transition-colors"
+              className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-800 text-gray-500 border-b-2 border-gray-900 hover:bg-gray-700 hover:text-red-400 active:bg-gray-700 active:border-b-0 active:translate-y-0.5 transform transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-red-500"
               title="Eliminar Tramo"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

@@ -78,14 +78,14 @@ const App: React.FC = () => {
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
               <button
                 onClick={addSection}
-                className="w-full sm:w-auto flex-grow flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="w-full sm:w-auto flex-grow flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg border-b-4 border-gray-900 hover:bg-gray-600 active:bg-gray-600 active:border-b-0 active:translate-y-1 transform transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-cyan-400"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" /></svg>
                 Añadir Tramo
               </button>
               <button
                 onClick={handleCalculate}
-                className="w-full sm:w-auto flex-grow flex items-center justify-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-300 shadow-md"
+                className="w-full sm:w-auto flex-grow flex items-center justify-center gap-2 px-6 py-3 bg-cyan-600 text-white font-bold rounded-lg border-b-4 border-cyan-800 hover:bg-cyan-500 active:bg-cyan-500 active:border-b-0 active:translate-y-1 transform transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-cyan-300"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clipRule="evenodd" /></svg>
                 Calcular y Visualizar
@@ -94,7 +94,7 @@ const App: React.FC = () => {
              <div className="mt-4">
               <button
                 onClick={handleReset}
-                className="w-full flex items-center justify-center gap-2 px-6 py-2 bg-red-800/50 hover:bg-red-800/80 text-red-200 font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-red-400"
+                className="w-full flex items-center justify-center gap-2 px-6 py-2 bg-red-700 text-white font-semibold rounded-lg border-b-4 border-red-900 hover:bg-red-600 active:bg-red-600 active:border-b-0 active:translate-y-1 transform transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-400"
               >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 010-2h5a1 1 0 011 1v5a1 1 0 01-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" /></svg>
                 Reiniciar
