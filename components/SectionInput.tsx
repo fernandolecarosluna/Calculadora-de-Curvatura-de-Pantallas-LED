@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Section } from '../types';
 
 interface SectionInputProps {
@@ -11,11 +11,30 @@ interface SectionInputProps {
 }
 
 const SectionInput: React.FC<SectionInputProps> = ({ section, index, onChange, onRemove, canRemove }) => {
+  const [modulesInputValue, setModulesInputValue] = useState(section.modules.toString());
+
+  useEffect(() => {
+    // Sincroniza el estado local si la prop cambia desde el padre (ej: al reiniciar)
+    if (parseInt(modulesInputValue, 10) !== section.modules) {
+        setModulesInputValue(section.modules.toString());
+    }
+  }, [section.modules]);
+
   const handleModulesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10);
-    if (!isNaN(value) && value >= 1) {
-      onChange(section.id, 'modules', value);
-    } else if (e.target.value === '') {
+    const value = e.target.value;
+    setModulesInputValue(value); // Permite un string vacío en el input
+
+    const numericValue = parseInt(value, 10);
+    if (!isNaN(numericValue) && numericValue >= 1) {
+      onChange(section.id, 'modules', numericValue);
+    }
+  };
+  
+  const handleModulesBlur = () => {
+    const numericValue = parseInt(modulesInputValue, 10);
+    if (isNaN(numericValue) || numericValue < 1) {
+      // Si el input está vacío o es inválido al perder el foco, se resetea a 1.
+      setModulesInputValue('1');
       onChange(section.id, 'modules', 1);
     }
   };
@@ -54,8 +73,9 @@ const SectionInput: React.FC<SectionInputProps> = ({ section, index, onChange, o
           <input
             type="number"
             id={`modules-${section.id}`}
-            value={section.modules}
+            value={modulesInputValue}
             onChange={handleModulesChange}
+            onBlur={handleModulesBlur}
             min="1"
             className="w-full bg-gray-700 border-gray-600 rounded-md p-2 text-white focus:ring-cyan-500 focus:border-cyan-500"
           />
